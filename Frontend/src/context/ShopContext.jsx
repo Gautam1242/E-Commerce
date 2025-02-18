@@ -41,8 +41,21 @@ const ShopContextProvider=(props)=>{
             cartData[itemId]={};
             cartData[itemId][size]=1;
         }
-        setCartItems(cartData)
-        toast.success("Yey! Product Added To Cart")
+        setCartItems(cartData);
+
+        //calling the api for add to cart
+        if(token){
+            try {
+                const response=await axios.post(backendUrl+'/api/cart/add',{itemId,size},{headers:{token}});
+                if(response.data.success){
+                    toast.success(response.data.message)
+                }
+            } catch (error) {
+                console.log(error);
+                toast.error(error.message);
+            }
+        }
+
     }
 
 
@@ -68,6 +81,20 @@ const ShopContextProvider=(props)=>{
         cartData[itemId][size]=quantity;
 
         setCartItems(cartData);
+
+        // calling the api 
+        if(token){
+            try {
+                const response=await axios.post(backendUrl+'/api/cart/update',{itemId,size,quantity},{headers:{token}});
+                if(response.data.success){
+                    toast.success("Cart Updated")
+                }
+                
+            } catch (error) {
+                console.log(error);
+                toast.error(error.message);
+            }
+        }
     }
 
     // calculate the total cart amount
@@ -102,6 +129,21 @@ const ShopContextProvider=(props)=>{
         }
     }
 
+    const getUserCart=async(token)=>{
+        try {
+            const response=await axios.post(backendUrl+'/api/cart/get',{},{headers:{token}});
+            if(response.data.success){
+                setCartItems(response.data.cartData);
+            }
+            else{
+                toast.error(response.data.error);
+            }
+        } catch (error) {
+            console.log(error);
+            toast.error(error.message);
+        }
+    }
+
     useEffect(()=>{
         getProductData();
     },[])
@@ -109,6 +151,7 @@ const ShopContextProvider=(props)=>{
     useEffect(()=>{
         if(!token && localStorage.getItem("token")){
             setToken(localStorage.getItem("token"));
+            getUserCart(localStorage.getItem("token"));
         }
     },[])
 
