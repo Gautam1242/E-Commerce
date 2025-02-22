@@ -1,5 +1,6 @@
 import orderModel from "../models/orderModel.js";
 import userModel from '../models/userModel.js'
+
 // Placing orders using COD METHOD
 const placeOrder=async(req,res)=>{
     try {
@@ -51,7 +52,20 @@ const allOrders=async(req,res)=>{
 
 // User order data for frontend for individual user
 const userOrders=async(req,res)=>{
-
+    try {
+        const {userId}=req.body;
+        const orders=await orderModel.find({userId});
+        res.json({
+            success:true,
+            orders
+        })
+    } catch (error) {
+        console.log(error);
+        res.json({
+            success:false,
+            message:error.message
+        })
+    }
 }
 
 // update the order status for Admin Panel
