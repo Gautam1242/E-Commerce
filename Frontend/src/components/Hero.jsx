@@ -18,7 +18,7 @@ const Hero = () => {
         </div>
         </div>
         {/* Hero Right Side */}
-        <img className='w-full sm:w-1/2' src={assets.hero_img} alt="" />
+        <img className='w-full sm:w-1/2' src="https://social.thearvindstore.com/data/fb_images/arvindmenswearofficial/266578038183954.jpg" alt="" />
     </div>
   )
 }
