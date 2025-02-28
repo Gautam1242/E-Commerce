@@ -1,5 +1,9 @@
 import orderModel from "../models/orderModel.js";
-import userModel from '../models/userModel.js'
+import userModel from '../models/userModel.js';
+import Stripe from "stripe";
+
+// gateway initialize
+const stripe=new Stripe(process.env.STRIPE_SECRET_KEY);
 
 // Placing orders using COD METHOD
 const placeOrder=async(req,res)=>{
@@ -37,7 +41,28 @@ const placeOrder=async(req,res)=>{
 
 // Placing orders using Stripe METHOD
 const placeOrderStripe=async(req,res)=>{
+    try {
+        const {userId,items,amount,address}=req.body;
+        const {origin}=req.headers;
 
+        const orderData={
+            userId,
+            items,
+            amount,
+            address,
+            paymentMethod:"Stripe",
+            payment:false,
+            date:Date.now()
+        }
+
+        const newOrder=new orderModel(orderData);
+        await newOrder.save();
+
+        
+
+    } catch (error) {
+        
+    }
 }
 
 // Placing orders using Razorpay METHOD
