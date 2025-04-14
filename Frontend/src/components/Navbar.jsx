@@ -2,39 +2,53 @@ import React, { useContext, useState } from "react";
 import { assets } from "../assets/assets";
 import { Link, NavLink } from "react-router-dom";
 import { ShopContext } from "../context/ShopContext";
+import { PiShoppingCartThin } from "react-icons/pi";
+import { toast } from "react-toastify";
 
 const Navbar = () => {
   const [visible, setVisible] = useState(false);
 
-  const { showSearch, setShowSearch, getCartCount , navigate , token , setToken ,setCartItems} = useContext(ShopContext);
+  const {
+    showSearch,
+    setShowSearch,
+    getCartCount,
+    navigate,
+    token,
+    setToken,
+    setCartItems,
+  } = useContext(ShopContext);
 
-  const logout=()=>{
-    navigate('/login');
+  const logout = () => {
+    navigate("/login");
     localStorage.removeItem("token");
-    setToken('');
+    setToken("");
+    toast.success("Logout Successfully");
     setCartItems({});
-  }
+  };
 
   return (
     <div className="flex items-center justify-between py-5 font-medium">
       <Link to="/">
-        <p className="text-xl font-medium mb-5">ShopCArt</p>
+        <p className="text-3xl font-medium mb-5 flex items-center gap-2">
+          <PiShoppingCartThin />
+          ShopCArt
+        </p>
       </Link>
       <ul className="hidden sm:flex gap-5 text-sm text-gray-700">
         <NavLink to="/" className="flex flex-col items-center gap-1">
-          <p>Home</p>
+          <p className="text-xl">Home</p>
           <hr className="w-2/4 border-none h-[1.5px] bg-gray-700 hidden" />
         </NavLink>
         <NavLink to="/collection" className="flex flex-col items-center gap-1">
-          <p>Collection</p>
+          <p className="text-xl">Collection</p>
           <hr className="w-2/4 border-none h-[1.5px] bg-gray-700 hidden" />
         </NavLink>
         <NavLink to="/about" className="flex flex-col items-center gap-1">
-          <p>About</p>
+          <p className="text-xl">About</p>
           <hr className="w-2/4 border-none h-[1.5px] bg-gray-700 hidden" />
         </NavLink>
         <NavLink to="/contact" className="flex flex-col items-center gap-1">
-          <p>Contact</p>
+          <p className="text-xl">Contact</p>
           <hr className="w-2/4 border-none h-[1.5px] bg-gray-700 hidden" />
         </NavLink>
       </ul>
@@ -46,18 +60,29 @@ const Navbar = () => {
           alt=""
         />
         <div className="group relative">
-          <img onClick={()=>token?null:navigate('/login')} className="w-5 cursor-pointer"
+          <img
+            onClick={() => (token ? null : navigate("/login"))}
+            className="w-5 cursor-pointer"
             src={assets.profile_icon}
-            alt="" />
-            {/* Drop Down */}
-          {token &&
-          <div className="group-hover:block hidden absolute dropdown-menu right-0 pt-4">
-          <div className="flex flex-col gap-2 w-36 py-3 px-5 bg-slate-100 text-gray-500 rounded">
-            <p className="cursor-pointer hover:text-black">My Profile</p>
-            <p onClick={()=>navigate('/orders')} className="cursor-pointer hover:text-black">Orders</p>
-            <p onClick={logout} className="cursor-pointer hover:text-black">Logout</p>
-          </div>
-        </div>}
+            alt=""
+          />
+          {/* Drop Down */}
+          {token && (
+            <div className="group-hover:block hidden absolute dropdown-menu right-0 pt-4">
+              <div className="flex flex-col gap-2 w-36 py-3 px-5 bg-slate-100 text-gray-500 rounded">
+                <p className="cursor-pointer hover:text-black">My Profile</p>
+                <p
+                  onClick={() => navigate("/orders")}
+                  className="cursor-pointer hover:text-black"
+                >
+                  Orders
+                </p>
+                <p onClick={logout} className="cursor-pointer hover:text-black">
+                  Logout
+                </p>
+              </div>
+            </div>
+          )}
         </div>
         <Link to="/cart" className="relative">
           <img src={assets.cart_icon} className="w-5 min-w-5" alt="" />
