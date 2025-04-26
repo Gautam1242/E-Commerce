@@ -40,7 +40,7 @@ const Navbar = () => {
           <hr className="w-2/4 border-none h-[1.5px] bg-gray-700 hidden" />
         </NavLink>
         <NavLink to="/collection" className="flex flex-col items-center gap-1">
-          <p className="text-xl">Collection</p>
+          <p className="text-xl">Collections</p>
           <hr className="w-2/4 border-none h-[1.5px] bg-gray-700 hidden" />
         </NavLink>
         <NavLink to="/about" className="flex flex-col items-center gap-1">
@@ -51,6 +51,10 @@ const Navbar = () => {
           <p className="text-xl">Contact</p>
           <hr className="w-2/4 border-none h-[1.5px] bg-gray-700 hidden" />
         </NavLink>
+        {/* <NavLink to="/reviews" className="flex flex-col items-center gap-1">
+          <p className="text-xl">Reviews</p>
+          <hr className="w-2/4 border-none h-[1.5px] bg-gray-700 hidden" />
+        </NavLink> */}
       </ul>
       <div className="flex items-center gap-6">
         <img

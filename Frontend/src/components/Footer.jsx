@@ -1,15 +1,16 @@
 import React from "react";
 import { assets } from "../assets/assets";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { PiShoppingCartThin } from "react-icons/pi";
 
 
 const Footer = () => {
+  const navigate=useNavigate();
   return (
     <div>
       <div className="flex flex-col sm:grid grid-cols-[3fr_1fr_1fr] gap-14 my-10 mt-40 text-sm">
         <div>
-          <p className="text-3xl font-medium mb-5 flex items-center gap-2">
+          <p className="text-3xl font-medium mb-5 flex items-center gap-2 cursor-pointer" onClick={()=>navigate("/")}>
             <PiShoppingCartThin />
             ShopCArt
           </p>
@@ -27,7 +28,7 @@ const Footer = () => {
               <Link to="/">Home</Link>
             </li>
             <li>
-              <Link to="/collection">Collection</Link>
+              <Link to="/collection">Collections</Link>
             </li>
             <li>
               <Link to="/about">About Us</Link>
