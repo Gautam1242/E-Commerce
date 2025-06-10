@@ -112,7 +112,11 @@ const PlaceOrder = () => {
           <input onChange={onChangeHandler} name='zipcode' value={formData.zipcode} className='border border-gray-300 rounded py-1.5 px-3.5 w-full' type="number" placeholder='Zip Code' required/>
           <input onChange={onChangeHandler} name='country' value={formData.country} className='border border-gray-300 rounded py-1.5 px-3.5 w-full' type="text" placeholder='Country' required/>
         </div>
+<<<<<<< HEAD
         <input onChange={onChangeHandler} name='phone' value={formData.phone} className='border border-gray-300 rounded py-1.5 px-3.5 w-full' type="tel" placeholder='Phone' maxLength={10} required/>
+=======
+        <input onChange={onChangeHandler} name='phone' value={formData.phone} className='border border-gray-300 rounded py-1.5 px-3.5 w-full' type="tel" placeholder='Phone' required/>
+>>>>>>> cf25d1785d34efa5a53683535b1921595e16cb49
       </div>
 
       {/* -----------------Right Side----------------- */}
@@ -129,7 +133,10 @@ const PlaceOrder = () => {
               <p className={`min-w-3.5 h-3.5 border rounded-full ${method==='stripe'?'bg-green-400':''}`}></p>
               <img className='h-5 mx-4' src={assets.stripe_logo} alt="" />
             </div>
+<<<<<<< HEAD
             
+=======
+>>>>>>> cf25d1785d34efa5a53683535b1921595e16cb49
             <div onClick={()=>setMethod('cod')} className='flex items-center gap-3 border p-2 px-3 cursor-pointer'>
               <p className={`min-w-3.5 h-3.5 border rounded-full ${method==='cod'?'bg-green-400':''}`}></p>
               <p className='text-gray-500 text-sm font-medium mx-4'>CASH ON DELIVERY</p>
@@ -144,4 +151,8 @@ const PlaceOrder = () => {
   )
 }
 
+<<<<<<< HEAD
 export default PlaceOrder
+=======
+export default PlaceOrder
+>>>>>>> cf25d1785d34efa5a53683535b1921595e16cb49

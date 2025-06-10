@@ -1,7 +1,11 @@
 import React from "react";
 import Title from "../components/Title";
 import { assets } from "../assets/assets";
+<<<<<<< HEAD
 import NewsletterBox from "../components/NewsletterBox";
+=======
+import NewsletterBox from '../components/NewsletterBox'
+>>>>>>> cf25d1785d34efa5a53683535b1921595e16cb49
 const About = () => {
   return (
     <div>
@@ -16,6 +20,7 @@ const About = () => {
           alt=""
         />
         <div className="flex flex-col justify-center gap-6 md:w-2/4 text-gray-600">
+<<<<<<< HEAD
           <p>
             ShopCArt is a modern and user-friendly e-commerce platform designed
             to offer a seamless shopping experience. From browsing a wide range
@@ -90,6 +95,32 @@ const About = () => {
         </div>
       </div>
       <NewsletterBox />
+=======
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id perferendis ullam modi nihil omnis consequatur. Soluta, molestiae magnam! Cumque aspernatur ea molestiae inventore nisi magni nulla provident. Doloremque soluta adipisci ratione dolore, culpa illo nesciunt ducimus illum rerum natus perferendis similique, unde voluptatum velit fuga quis sapiente consequatur facilis eum.</p>
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur hic, veniam officia voluptatibus laborum quisquam quaerat repellendus atque nobis aliquam officiis! Illum aperiam illo itaque!</p>
+          <b className="text-gray-800">Our Mission</b>
+          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nam, veniam suscipit? Minus nisi repudiandae recusandae debitis nulla, non ratione earum velit explicabo itaque. Modi magnam, omnis sit labore, reprehenderit sed totam nam fugiat beatae ducimus aliquid officiis quidem est temporibus natus animi ipsum expedita consectetur dolor? Accusamus unde error aliquam.</p>
+        </div>
+      </div>
+      <div className="text-xl py-4">
+        <Title text1={'WHY'} text2={'CHOOSE US'}/>
+      </div>
+      <div className="flex flex-col md:flex-row text-sm mb-20">
+        <div className="border px-10 md:px-16 py-8 sm:py-20 flex flex-col gap-5">
+          <b>Quality Assurance</b>
+          <p className="text-gray-600">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto fugit nobis reiciendis doloribus voluptatum porro! Vero reprehenderit, ipsa nostrum provident autem eveniet. Illum, sunt quas iste consectetur minus voluptate fugit, non ad libero autem labore veritatis id suscipit laboriosam nulla!</p>
+        </div>
+        <div className="border px-10 md:px-16 py-8 sm:py-20 flex flex-col gap-5">
+          <b>Convenience</b>
+          <p className="text-gray-600">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto fugit nobis reiciendis doloribus voluptatum porro! Vero reprehenderit, ipsa nostrum provident autem eveniet. Illum, sunt quas iste consectetur minus voluptate fugit, non ad libero autem labore veritatis id suscipit laboriosam nulla!</p>
+        </div>
+        <div className="border px-10 md:px-16 py-8 sm:py-20 flex flex-col gap-5">
+          <b>Exceptional Customer Service</b>
+          <p className="text-gray-600">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto fugit nobis reiciendis doloribus voluptatum porro! Vero reprehenderit, ipsa nostrum provident autem eveniet. Illum, sunt quas iste consectetur minus voluptate fugit, non ad libero autem labore veritatis id suscipit laboriosam nulla!</p>
+        </div>
+      </div>
+      <NewsletterBox/>
+>>>>>>> cf25d1785d34efa5a53683535b1921595e16cb49
     </div>
   );
 };

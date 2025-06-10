@@ -2,7 +2,10 @@ import React, { useContext, useEffect, useState } from "react";
 import { ShopContext } from "../context/ShopContext";
 import Title from "../components/Title";
 import axios from "axios";
+<<<<<<< HEAD
 import { toast } from "react-toastify";
+=======
+>>>>>>> cf25d1785d34efa5a53683535b1921595e16cb49
 
 const Orders = () => {
   const { backendUrl,token, currency } = useContext(ShopContext);
@@ -27,8 +30,12 @@ const Orders = () => {
         setOrderData(allOrdersItem.reverse())
       }
     } catch (error) {
+<<<<<<< HEAD
       console.log(error);
       toast.error(error.message);
+=======
+      
+>>>>>>> cf25d1785d34efa5a53683535b1921595e16cb49
     }
   }
 

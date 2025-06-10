@@ -15,7 +15,10 @@ import SearchBar from "./components/SearchBar";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css'
 import Verify from "./pages/Verify";
+<<<<<<< HEAD
 import Review from "./pages/Review";
+=======
+>>>>>>> cf25d1785d34efa5a53683535b1921595e16cb49
 
 const App = () => {
   return (
@@ -34,7 +37,10 @@ const App = () => {
         <Route path="/place-order" element={<PlaceOrder />} />
         <Route path="/orders" element={<Orders />} />
         <Route path="/verify" element={<Verify />} />
+<<<<<<< HEAD
         <Route path="/reviews" element={<Review />} />
+=======
+>>>>>>> cf25d1785d34efa5a53683535b1921595e16cb49
       </Routes>
       <Footer/>
     </div>
